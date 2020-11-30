@@ -196,14 +196,16 @@ class zrg3m(serCommon):
       print("Fail")
         
     while True:      
-      data = self.sp.read(1)
+      time.sleep(0.5)
       n = self.sp.inWaiting()
       if n<1:
         break
       else:            
-          data = data + self.sp.readline()
+          #'data = data + self.sp.readline()
+          data = self.sp.readline()
           print(data)
           time.sleep(0.05)
+        
 
     '''      
     data = self.sp.readline()
